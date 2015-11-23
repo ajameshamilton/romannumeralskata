@@ -9,7 +9,22 @@ function solution(number){
     number-= 1000;
     answer.push('M');
   }
+  if (number>=100){
+  convertA2R(2,numerals, answer,number);
+    var round= 100*(Math.floor(number/100));
+    number -= round; 
+    }
   
+  if (number>=10){
+    convertA2R(4,numerals, answer, number);
+    var round= 10*(Math.floor(number/10));
+    number -= round; 
+    }
+  if (number>=1){
+  convertA2R(6,numerals, answer, number);
+  var round= (Math.floor(number));
+  number -= round;
+  }
   answer= answer.join('');
   return answer;
   }
@@ -60,3 +75,15 @@ My personal solution will be posted there. To track tests I will log them here.
 TESTS:
 1) For thousands conversion: Test.assertEquals(solution(2000), 'MM', 'Correct!'); success 
 -removed arrays instead created convert function
+2) for remaining conversions: 
+Testing for 100s: Test.assertEquals(solution(2200), 'MMCC', 'Correct!');
+Testing for 10s: Test.assertEquals(solution(2220), 'MMCCXX', 'Correct!');
+Testing for singles: Test.assertEquals(solution(2222), 'MMCCXXII', 'Correct!');
+Testing for 9s: Test.assertEquals(solution(2009), 'MMIX', 'Correct!');
+Testing for 40: Test.assertEquals(solution(2040), 'MMXL', 'Correct!');
+Testing for 400:Test.assertEquals(solution(2400), 'MMCD', 'Correct!');
+Testing for 900: Test.assertEquals(solution(2900), 'MMCM', 'Correct!');
+Testing for below 1: Test.assertEquals(solution(0),"Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999." , 'Correct!');
+Testing for above 4999: Test.assertEquals(solution(5000),"Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999." , 'Correct!');
+
+All encoder tests successful.
