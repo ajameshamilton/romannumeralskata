@@ -1,4 +1,4 @@
-function solution(number){
+function cA2R(number){
   if ((number >4999)||(number<1)){ // Normal roman numerals can't handle numbers larger than 4999.
   return "Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999.";
   } else {
@@ -86,4 +86,14 @@ Testing for 900: Test.assertEquals(solution(2900), 'MMCM', 'Correct!');
 Testing for below 1: Test.assertEquals(solution(0),"Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999." , 'Correct!');
 Testing for above 4999: Test.assertEquals(solution(5000),"Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999." , 'Correct!');
 
-All encoder tests successful.
+All encoder tests successful. */
+
+
+//ADDING DECODER function
+
+function solution(roman){
+  var letters= {M:1000, CM:900, D:500, CD:400, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }
+  var arr= roman.split('');
+  var answer=0;
+  return answer;
+}
