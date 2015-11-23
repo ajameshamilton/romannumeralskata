@@ -91,9 +91,39 @@ All encoder tests successful. */
 
 //ADDING DECODER function
 
-function solution(roman){
+function cR2A(roman){
   var letters= {M:1000, CM:900, D:500, CD:400, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }
   var arr= roman.split('');
   var answer=0;
+  for (var i=0; i <arr.length; i++){
+  var double= arr[i]+ arr[i+1];
+    if (checkDouble(double)){
+      answer=convertR2A(double, answer, letters);
+      i++;
+    } else {
+    answer=convertR2A(arr[i], answer, letters);
+    }
+  }
   return answer;
 }
+
+//checkDouble checks if input is valid compound Roman numeral
+function checkDouble(double){ 
+if (double == "CM" || double == "CD" || double == "XC" || double == "XL" || double == "IX" || double == "IV"){
+   console.log("hi!");
+   return true;
+  } else {
+  return false;
+  }
+}
+//convertR2A adds value of input to answer
+function convertR2A(num, answer, letters) {
+  answer+=letters[num];
+  return answer;
+}
+
+/* TESTS for decoder:
+1) Testing for doubles: Test.assertEquals(solution("IV"), 4, 'Correct!');
+2) Testing for singles: Test.assertEquals(solution("C"), 100, 'Correct!');
+3) Testing for complex: Test.assertEquals(solution('MCMXCII'), 1992, 'Correct!');
+All tests successful.
