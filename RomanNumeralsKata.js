@@ -8,10 +8,14 @@ $("#form").on("submit", function(ev){
 
 function decision(input){
   if (input == parseInt(input)){
+    $('#result').css("font-size", "2.5em");
     return cA2R(input);
   } else if (input.search(/[^cdilmx]/gi) == -1){
-    return cR2A(input);
+    var up= input.toUpperCase();
+    $('#result').css("font-size", "2.5em");
+    return cR2A(up);
   } else {
+    $('#result').css("font-size", "1em");
     return " I'm sorry, that's not a valid input. Please enter a value in either Roman or Arabic numerals."
   }
 
@@ -52,6 +56,8 @@ function cA2R(number){
 
 function convertA2R(key, numerals, answer, number){
   //key = normal numeral for that digit, e.g. C for 100s, Xs for 10s, Is for 1s
+  number= number.toUpperCase();
+  console.log(number);
   var arr= number.toString().split('');
   var num= arr[0];
   num=parseInt(num);
