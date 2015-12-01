@@ -1,3 +1,16 @@
+// Decision function on which to call
+function decision(input){
+  if (input == parseInt(input)){
+    return cA2R(input);
+  } else if (input.search(/[^cdilmx]/gi) == -1){
+    return cR2A(input);
+  } else {
+    return " I'm sorry, that's not a valid input. Please enter a value in either Roman or Arabic numerals."
+  }
+
+}
+
+
 function cA2R(number){
   if ((number >4999)||(number<1)){ // Normal roman numerals can't handle numbers larger than 4999.
   return "Sorry, normal roman numerals can't cope with that number! Please enter a value between 1-4999.";
@@ -90,17 +103,6 @@ All encoder tests successful. */
 
 
 //ADDING DECODER function
-function decision(input){
-  if (input == parseInt(input)){
-    return cA2R(input);
-  } else if (input.search(/[cdilmx/gi) != -1){
-    return cR2A(input);
-  } else {
-    return " I'm sorry, that's not a valid input. Please enter a value in either Roman or Arabic numerals."
-  }
-
-}
-
 
 function cR2A(roman){
   var letters= {M:1000, CM:900, D:500, CD:400, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }
