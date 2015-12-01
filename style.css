@@ -1,3 +1,9 @@
+@font-face {
+	font-family:'Requiem';
+	src:url('Requiem.ttf');
+	
+}
+
 body { 
   background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('roman-forum-min.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -7,6 +13,7 @@ body {
   border-top:1px black;
   font-size: 2.3em;
   height:100vh;
+  font-family:'Requiem', 'Arial';
 }
 
 .strokeme {
