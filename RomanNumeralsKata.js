@@ -1,4 +1,11 @@
 // Decision function on which to call
+$("#form").on("submit", function(ev){
+  ev.preventDefault();
+  var input= $("#text").val();
+  $('#result').text(decision(input));
+
+})
+
 function decision(input){
   if (input == parseInt(input)){
     return cA2R(input);
@@ -139,4 +146,4 @@ function convertR2A(num, answer, letters) {
 1) Testing for doubles: Test.assertEquals(solution("IV"), 4, 'Correct!');
 2) Testing for singles: Test.assertEquals(solution("C"), 100, 'Correct!');
 3) Testing for complex: Test.assertEquals(solution('MCMXCII'), 1992, 'Correct!');
-All tests successful.
+All tests successful. */
