@@ -10,7 +10,7 @@ function decision(input){
   if (input == parseInt(input)){
     $('#result').css("font-size", "2.5em");
     return cA2R(input);
-  } else if (input.search(/[^cdilmx]/gi) == -1){
+  } else if (input.search(/[^cdilmvx]/gi) == -1){
     var up= input.toUpperCase();
     $('#result').css("font-size", "2.5em");
     return cR2A(up);
