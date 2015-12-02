@@ -56,8 +56,6 @@ function cA2R(number){
 
 function convertA2R(key, numerals, answer, number){
   //key = normal numeral for that digit, e.g. C for 100s, Xs for 10s, Is for 1s
-  number= number.toUpperCase();
-  console.log(number);
   var arr= number.toString().split('');
   var num= arr[0];
   num=parseInt(num);
