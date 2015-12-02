@@ -9,7 +9,6 @@ $("#form").on("submit", function(ev){
 function decision(input){
   if (input == parseInt(input)){
     $('#result').css("font-size", "2.5em");
-    console.log('test');
     return cA2R(input);
   } else if (input.search(/[^cdilmvx]/gi) == -1){
     var up= input.toUpperCase();
@@ -57,7 +56,6 @@ function cA2R(number){
 
 function convertA2R(key, numerals, answer, number){
   //key = normal numeral for that digit, e.g. C for 100s, Xs for 10s, Is for 1s
-  console.log(number);
   var arr= number.toString().split('');
   var num= arr[0];
   num=parseInt(num);
@@ -136,7 +134,6 @@ function cR2A(roman){
 //checkDouble checks if input is valid compound Roman numeral
 function checkDouble(double){ 
 if (double == "CM" || double == "CD" || double == "XC" || double == "XL" || double == "IX" || double == "IV"){
-   console.log("hi!");
    return true;
   } else {
   return false;
