@@ -134,7 +134,6 @@ function cR2A(roman){
 //checkDouble checks if input is valid compound Roman numeral
 function checkDouble(double){ 
 if (double == "CM" || double == "CD" || double == "XC" || double == "XL" || double == "IX" || double == "IV"){
-   console.log("hi!");
    return true;
   } else {
   return false;
